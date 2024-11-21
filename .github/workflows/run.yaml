@@ -3,7 +3,7 @@ name: Run
 on:
   workflow_dispatch:
   schedule:
-    - cron: "5 * * * *"
+    - cron: "12 * * * *"
 
 jobs:
   bot-post:
