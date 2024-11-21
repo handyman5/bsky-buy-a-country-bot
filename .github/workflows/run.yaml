@@ -1,7 +1,9 @@
 name: Run
 
 on:
-  workflow_dispatch
+  workflow_dispatch:
+  schedule:
+    - cron: "5 * * * *"
 
 jobs:
   bot-post:
@@ -18,14 +20,6 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version-file: ".python-version"
-
-      - name: Debug
-        env:
-          BSKY_USERNAME: ${{ secrets.BSKY_USERNAME }}
-          BSKY_PASSWORD: ${{ secrets.BSKY_PASSWORD }}
-        run: |
-          echo $BSKY_USERNAME | base64
-          echo $BSKY_PASSWORD | base64
 
       - name: "Post"
         env:
