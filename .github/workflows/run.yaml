@@ -19,6 +19,14 @@ jobs:
         with:
           python-version-file: ".python-version"
 
+      - name: Debug
+        env:
+          BSKY_USERNAME: ${{ secrets.BSKY_USERNAME }}
+          BSKY_PASSWORD: ${{ secrets.BSKY_PASSWORD }}
+        run: |
+          echo $BSKY_USERNAME | base64
+          echo $BSKY_PASSWORD | base64
+
       - name: "Post"
         env:
           BSKY_USERNAME: ${{ secrets.BSKY_USERNAME }}
