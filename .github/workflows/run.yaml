@@ -20,4 +20,7 @@ jobs:
           python-version-file: ".python-version"
 
       - name: "Post"
+        env:
+          BSKY_USERNAME: ${{ secrets.BSKY_USERNAME }}
+          BSKY_PASSWORD: ${{ secrets.BSKY_PASSWORD }}
         run: uv run lib.py
