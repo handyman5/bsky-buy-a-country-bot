@@ -1,0 +1,11 @@
+[project]
+name = "bsky-buy-a-country-bot"
+version = "0.1.0"
+description = "Bluesky bot that compares the net worth of billionaires with the nominal GDP of countries"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "atproto>=0.0.55",
+    "requests>=2.32.3",
+    "sparqlwrapper>=2.0.0",
+]
